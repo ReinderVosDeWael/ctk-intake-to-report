@@ -24,14 +24,7 @@ COPY . /home/site/wwwroot
 COPY --from=unzipper /files/*.png /home/site/wwwroot/src/ctk-functions/data/signatures
 
 RUN cd /home/site/wwwroot && \
-    apt-get clean; apt-get -y update && \
-    mkdir -p /usr/share/man/man1/ && \
-    apt-get install -y openjdk-17-jdk && \
-    apt-get install -y openjdk-17-jre && \
-    update-alternatives --config java && \
-    update-alternatives --config javac && \
     pip install poetry && \
     poetry config virtualenvs.create false && \
     poetry install --only main --no-interaction --no-ansi && \
-    poetry run python -c 'import spacy; spacy.load("en_core_web_sm")' && \
-    poetry run python -c 'import language_tool_python; language_tool_python.LanguageTool("en-US")'
+    poetry run python -c 'import spacy; spacy.load("en_core_web_sm")'

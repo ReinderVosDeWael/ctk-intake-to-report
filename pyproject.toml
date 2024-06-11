@@ -22,7 +22,6 @@ pycap = "^2.6.0"
 pypandoc-binary = "^1.13"
 en_core_web_sm = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz"}
 polars-lts-cpu = "^0.20.23"
-language-tool-python = "^2.8"
 spacy = "^3.7.4"
 openai = "^1.30.3"
 

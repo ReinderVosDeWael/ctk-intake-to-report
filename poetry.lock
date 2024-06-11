@@ -997,23 +997,6 @@ build = ["build", "twine"]
 test = ["pytest", "pytest-cov"]
 
 [[package]]
-name = "language-tool-python"
-version = "2.8"
-description = "Checks grammar using LanguageTool."
-optional = false
-python-versions = "*"
-files = [
-    {file = "language_tool_python-2.8-py3-none-any.whl", hash = "sha256:0755042211e41307f58ab2e779fe2aaf0e6f6a64a2f05b088723d7da5f21e295"},
-    {file = "language_tool_python-2.8.tar.gz", hash = "sha256:739b84d95f7d7ed3d2c8bca389c1b80f7e7871059f24842320b614723872a75c"},
-]
-
-[package.dependencies]
-pip = "*"
-requests = "*"
-tqdm = "*"
-wheel = "*"
-
-[[package]]
 name = "lxml"
 version = "5.2.1"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -1664,17 +1647,6 @@ pygments = ">=2.12.0"
 
 [package.extras]
 dev = ["hypothesis", "mypy", "pdoc-pyo3-sample-library (==1.0.11)", "pygments (>=2.14.0)", "pytest", "pytest-cov", "pytest-timeout", "ruff", "tox", "types-pygments"]
-
-[[package]]
-name = "pip"
-version = "24.0"
-description = "The PyPA recommended tool for installing Python packages."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pip-24.0-py3-none-any.whl", hash = "sha256:ba0d021a166865d2265246961bec0152ff124de910c5cc39f1156ce3fa7c69dc"},
-    {file = "pip-24.0.tar.gz", hash = "sha256:ea9bd1a847e8c5774a5777bb398c19e80bcd4e2aa16a4b301b718fe6f593aba2"},
-]
 
 [[package]]
 name = "platformdirs"
@@ -2722,20 +2694,6 @@ typer = ">=0.3.0,<0.10.0"
 wasabi = ">=0.9.1,<1.2.0"
 
 [[package]]
-name = "wheel"
-version = "0.43.0"
-description = "A built-package format for Python"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "wheel-0.43.0-py3-none-any.whl", hash = "sha256:55c570405f142630c6b9f72fe09d9b67cf1477fcf543ae5b8dcb1f5b7377da81"},
-    {file = "wheel-0.43.0.tar.gz", hash = "sha256:465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"},
-]
-
-[package.extras]
-test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
-
-[[package]]
 name = "yarl"
 version = "1.9.4"
 description = "Yet another URL library"
@@ -2841,4 +2799,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "147d1366740828e2695bfd8b01d3cc2b5823b19d9090afa6441aa649b9a9df8a"
+content-hash = "62fec1cc7e527a3b8739b22069c3ada0bd7c05ffcc550cc7cceeb8afbbb64a9d"

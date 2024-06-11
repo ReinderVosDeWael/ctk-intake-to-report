@@ -3,6 +3,7 @@
 import pathlib
 
 import docx
+import pytest
 from docx.text import run
 
 from ctk_functions.functions.file_conversion import controller
@@ -31,11 +32,12 @@ def test_mark_warnings_as_red(tmp_path: pathlib.Path) -> None:
     assert is_run_font_color_red(modified_doc.paragraphs[1].runs[1])
 
 
-def test_markdown2docx(tmp_path: pathlib.Path) -> None:
+@pytest.mark.asyncio
+async def test_markdown2docx(tmp_path: pathlib.Path) -> None:
     """Tests the conversion of Markdown to docx."""
     markdown = "# Header\n\nThis is a paragraph.\n\nThis is a {{!WARNING-TEXT}}."
 
-    docx_bytes = controller.markdown2docx(markdown)
+    docx_bytes = await controller.markdown2docx(markdown)
     filename = tmp_path / "test.docx"
     with open(filename, "wb") as file:
         file.write(docx_bytes)

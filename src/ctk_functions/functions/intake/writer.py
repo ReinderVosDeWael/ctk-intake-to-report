@@ -89,10 +89,10 @@ class ReportWriter:
         self.add_page_break()
         self.add_footer()
 
-        self.apply_corrections()
         self.replace_patient_information()
         self.add_signatures()
         await self.make_llm_edits()
+        await self.apply_corrections()
 
     def replace_patient_information(self) -> None:
         """Replaces the patient information in the report."""
@@ -771,11 +771,11 @@ class ReportWriter:
         paragraph = self._insert(text)
         cmi_docx.ExtendParagraph(paragraph).format(font_rgb=RGB.TESTING.value)
 
-    def apply_corrections(self) -> None:
+    async def apply_corrections(self) -> None:
         """Applies various grammatical and styling corrections."""
         logger.debug("Applying corrections to the report.")
         document_corrector = language_utils.DocumentCorrections(self.report)
-        document_corrector.correct()
+        await document_corrector.correct()
 
     def add_signatures(self) -> None:
         """Adds the signatures to the report.

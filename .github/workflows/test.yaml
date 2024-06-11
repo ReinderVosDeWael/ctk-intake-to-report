@@ -8,6 +8,11 @@ on:
 
 jobs:
   unit:
+    services:
+      language-tool:
+        image: erikvl87/languagetool:6.4
+        ports:
+        - 8010:8010
     env:
       REDCAP_API_TOKEN: test
       AZURE_BLOB_CONNECTION_STRING: test

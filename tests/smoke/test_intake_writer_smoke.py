@@ -46,6 +46,10 @@ async def intake_document(
         "ctk_functions.microservices.azure.AzureLlm.run",
         return_value="",
     )
+    mocker.patch(
+        "ctk_functions.functions.intake.utils.language_utils.DocumentCorrections.correct",
+        return_value=None,
+    )
     intake_info = parser.IntakeInformation(test_redcap_data)
     intake_writer = writer.ReportWriter(intake_info)
     await intake_writer.transform()

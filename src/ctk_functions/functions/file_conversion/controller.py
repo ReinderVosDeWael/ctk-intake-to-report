@@ -11,7 +11,7 @@ import pypandoc
 from ctk_functions.text import corrections
 
 
-def markdown2docx(
+async def markdown2docx(
     markdown: str, *, correct_they: bool = False, correct_capitalization: bool = False
 ) -> bytes:
     """Converts a Markdown document to a .docx file.
@@ -31,7 +31,7 @@ def markdown2docx(
         enabled_rules += ["UPPERCASE_SENTENCE_START"]
     if enabled_rules:
         correcter = corrections.LanguageCorrecter()
-        markdown = correcter.run(markdown, enabled_rules=enabled_rules)
+        markdown = await correcter.run(markdown, enabled_rules=enabled_rules)
 
     with tempfile.NamedTemporaryFile(suffix=".docx") as temp_file:
         pypandoc.convert_text(

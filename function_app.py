@@ -101,7 +101,7 @@ async def markdown2docx(req: functions.HttpRequest) -> functions.HttpResponse:
             "Please provide a Markdown document.",
             status_code=http.HTTPStatus.BAD_REQUEST,
         )
-    docx_bytes = file_conversion_controller.markdown2docx(
+    docx_bytes = await file_conversion_controller.markdown2docx(
         markdown,
         correct_they=correct_they,
         correct_capitalization=correct_capitalization,

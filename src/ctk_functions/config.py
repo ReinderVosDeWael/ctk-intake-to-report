@@ -22,6 +22,10 @@ class Settings(pydantic_settings.BaseSettings):
     AZURE_OPENAI_LLM_DEPLOYMENT: pydantic.SecretStr
     AZURE_OPENAI_ENDPOINT: pydantic.SecretStr
 
+    LANGUAGE_TOOL_ENDPOINT: pydantic.HttpUrl = pydantic.HttpUrl(
+        "http://localhost:8010/v2/check"
+    )
+
     LOGGER_VERBOSITY: int = 20
 
 
